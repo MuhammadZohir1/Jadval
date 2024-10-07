@@ -1,0 +1,47 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+td {
+    cursor: text; /* Makes cells appear editable */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+td {
+    cursor: text; /* Makes cells appear editable */
+}
+@media screen and (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    th, td {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
+@media screen and (max-width: 480px) {
+    th, td {
+        font-size: 12px;
+        padding: 4px;
+    }
+}

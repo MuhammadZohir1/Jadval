@@ -4,23 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Tracking Table</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        td {
-            cursor: text; /* Makes cells appear editable */
-        }
-    </style>
+<link rel="stylesheet" href="style.css">
 </head >
 <body>
 
@@ -490,40 +474,7 @@
     </tbody>
 </table>
 
-<script>
-    const table = document.getElementById('paymentTable');
-
-    // Load saved data from localStorage
-    function loadTableData() {
-        const savedData = JSON.parse(localStorage.getItem('paymentData'));
-        if (savedData) {
-            for (let rowIndex = 1; rowIndex < table.rows.length; rowIndex++) {
-                for (let colIndex = 1; colIndex < table.rows[rowIndex].cells.length; colIndex++) {
-                    table.rows[rowIndex].cells[colIndex].innerText = savedData[rowIndex - 1][colIndex - 1] || '';
-                }
-            }
-        }
-    }
-
-    // Save data to localStorage
-    function saveTableData() {
-        const dataToSave = [];
-        for (let rowIndex = 1; rowIndex < table.rows.length; rowIndex++) {
-            const rowData = [];
-            for (let colIndex = 1; colIndex < table.rows[rowIndex].cells.length; colIndex++) {
-                rowData.push(table.rows[rowIndex].cells[colIndex].innerText);
-            }
-            dataToSave.push(rowData);
-        }
-        localStorage.setItem('paymentData', JSON.stringify(dataToSave));
-    }
-
-    // Event listener for saving data on input change
-    table.addEventListener('input', saveTableData);
-
-    // Load data when the page is loaded
-    loadTableData();
-</script>
+<script src="main.js"></script>
 
 
 <footer>
